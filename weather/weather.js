@@ -118,7 +118,7 @@ window.addEventListener('load', ()=> {
         .then(checkTemp => {
             const proxy = 'https://api.allorigins.win/raw?url=';
             const APIkey = 'fd9d9c6418c23d94745b836767721ad1';
-            const api = `${proxy}https://api.darksky.net/forecast/${APIkey}/${lat},${long}`;
+            const api = `https://api.darksky.net/forecast/${APIkey}/${lat},${long}`;
             fetch(api)
                 .then(response => {
                     return response.json();
