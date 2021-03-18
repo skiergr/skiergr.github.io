@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather</title>
+    <link rel="stylesheet" href="weather.css" />
+  </head>
+  <body>
+    
+      <div class="main">
+        <button class="home" onclick = "window.location.href = `/Users/gradyramberg/Documents/Visual Studio/Grady's Website/Second Website/website.html`">Home</button>
+        <div class="options">
+          <button class="today">Today's Weather</button>
+          <button class="threeDay">3 Day Weather</button>
+        </div>
+        <div class="location">
+          <h1 class="location-timezone"></h1>
+          <p>
+            <canvas class="icon" width="128" height="128"></canvas>
+          </p>
+        </div>
+        <div class="weather">
+          <div class="weather-temperature">
+            <h2 class="temperature-degree"></h1>
+            <span class="temperature-type"></span>
+          </div>
+          <p class="weather-description"></p>
+          <div class="other">
+            <p class="wind"></p>
+            <p class="humidity"></p>
+        </div>
+      </div>
+      <div class="weather3 fadeOut">
+        <div class="location3">
+          <h1 class="location-timezone3"></h1>
+        </div>
+        <table class="table">
+          <tr>
+            <td>
+              <canvas class="icon1" width="60" height="60"></canvas>
+              <p class="dayOne"></p>
+            </td>
+            <td>
+              <canvas class="icon2" width="60" height="60"></canvas>
+              <p class="dayTwo"></p>
+            </td>
+            <td>
+              <canvas class="icon3" width="60" height="60"></canvas>
+              <p class="dayThree"></p>
+            </td>
+          </tr>
+          <tr>
+            <td class="temp-one">
+              <p class="one-high">
+              </p>
+              </span>
+              <p class="one-low">
+              </p>
+              <p class="temperature-type1">F</p>
+            </td>
+            <td class="temp-two">
+              <p class="two-high">
+              </p>
+              <p class="two-low">
+              </p>
+              <span class="temperature-type2">F</span>
+            </td>
+            <td class="temp-three">
+              <p class="three-high">
+              </p>
+              <p class="three-low">
+              </p>
+              <span class="temperature-type3">F</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="description-one">
+            </td>
+            <td class="description-two">
+            </td>
+            <td class="description-three">
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <script src="skycons.js"></script>
+    <script src="weather.js"></script>
+  </body>
+</html>
