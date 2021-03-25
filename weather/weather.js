@@ -114,10 +114,6 @@ window.addEventListener('load', ()=> {
     function showPosition(position) {
         lat = position.coords.latitude;
         long = position.coords.longitude;
-    }
-    
-    
-
         .then(checkTemp => {
             const proxy = 'https://api.allorigins.win/raw?url=';
             const APIkey = 'fd9d9c6418c23d94745b836767721ad1';
