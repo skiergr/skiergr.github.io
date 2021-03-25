@@ -110,6 +110,7 @@ window.addEventListener('load', () => {
         }
     }; 
     function showPosition(position) {
+        console.log (position.coords.latitude)
         lat = position.coords.latitude;
         long = position.coords.longitude;
     };
