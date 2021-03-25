@@ -117,11 +117,25 @@ window.addEventListener('load', () => {
     const api = `${proxy}https://api.darksky.net/forecast/${APIkey}/${lat},${long}`;
     fetch(api)
         .then(response => {
-            return response.json();
+            return response.text();
         })
         .then(responseData => {
             console.log(responseData);
-            
+            let dayOne = [responseData.daily.data[0].apparentTemperatureHigh, responseData.daily.data[0].apparentTemperatureLow, responseData.daily.data[0].summary, responseData.daily.data[0].icon];
+            let dayTwo = [responseData.daily.data[1].apparentTemperatureHigh, responseData.daily.data[1].apparentTemperatureLow, responseData.daily.data[1].summary, responseData.daily.data[1].icon];
+            let dayThree = [responseData.daily.data[2].apparentTemperatureHigh, responseData.daily.data[2].apparentTemperatureLow, responseData.daily.data[2].summary, responseData.daily.data[2].icon];
+            high1.textContent = (`High: ${Math.floor(dayOne[0])}`);
+            high2.textContent = (`High: ${Math.floor(dayTwo[0])}`);
+            high3.textContent = (`High: ${Math.floor(dayThree[0])}`);
+            low1.textContent = (`Low: ${Math.floor(dayOne[1])}`);
+            low2.textContent = (`Low: ${Math.floor(dayTwo[1])}`);
+            low3.textContent = (`Low: ${Math.floor(dayThree[1])}`);
+            description1.textContent = (dayOne[2]);
+            description2.textContent = (dayTwo[2]);
+            description3.textContent = (dayThree[2]);
+            setIcons(dayOne[3], document.querySelector('.icon1'));
+            setIcons(dayTwo[3], document.querySelector('.icon2'));
+            setIcons(dayThree[3], document.querySelector('.icon3'));
 
             const {temperature, summary, icon, windSpeed, windGust, humidity} = responseData.currently;
             temperatureDegree.textContent = Math.floor(temperature);
