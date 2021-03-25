@@ -112,8 +112,10 @@ window.addEventListener('load', () => {
     
 
 
-
-    fetch(`https://api.darksky.net/forecast/fd9d9c6418c23d94745b836767721ad1/${lat},${long}`)
+    const proxy = 'https://api.allorigins.win/raw?url=';
+    const APIkey = 'fd9d9c6418c23d94745b836767721ad1';
+    const api = `${proxy}https://api.darksky.net/forecast/${APIkey}/1,1`;
+    fetch(api)
         .then(response => {
             return response.json();
         })
