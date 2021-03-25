@@ -106,21 +106,7 @@ window.addEventListener('load', ()=> {
         });
     };
     weatherSwitch ();
-    
-    function getLocation() {
-        if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(showPosition);
-      }
-      
-      function showPosition(position) {
-        lat = position.coords.latitude;
-        long = position.coords.longitude;
-        console.log (lat, long);
-      }
-    
-    
-    
-    fetch('http://api.ipstack.com/check?access_key=44d2c6d889daca228ba06a137905b446')
+    fetch('google.com')
         .then(response => {
             return response.json();
         })
