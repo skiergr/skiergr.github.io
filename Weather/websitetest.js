@@ -1,8 +1,6 @@
 window.addEventListener('load', () => {
     const date = new Date();
     const day = date.getDate();
-    let long;
-    let lat;
     let weatherDescription = document.querySelector('.weather-description');
     let temperatureDegree = document.querySelector('.temperature-degree')
     let locationTimezone = document.querySelector('.location-timezone');
@@ -106,7 +104,7 @@ window.addEventListener('load', () => {
     }
     let long = geolocationCoordinatesInstance.longitude
     console.log(lat, long);
-    console.log("hello");
+    console.log("hello1");
     daysGraph ();
     weatherSwitch ();
 });
