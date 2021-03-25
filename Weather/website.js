@@ -106,7 +106,7 @@ window.addEventListener('load', ()=> {
         });
     };
     weatherSwitch ();
-    fetch('google.com')
+    fetch('')
         .then(response => {
             return response.json();
         })
