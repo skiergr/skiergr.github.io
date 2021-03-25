@@ -113,7 +113,6 @@ window.addEventListener('load', ()=> {
         .then(apicords => {
             long = apicords.longitude;
             lat = apicords.latitude;
-
         })
         .then(checkTemp => {
             const proxy = 'https://api.allorigins.win/raw?url=';
