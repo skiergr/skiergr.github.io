@@ -109,12 +109,7 @@ window.addEventListener('load', () => {
         console.log(lat, long);
         console.log("hello2");
     });
-    function setIcons(icon, iconID){
-        const skycons = new Skycons({color: "white"});
-        const currentIcon = icon.replace(/-/g, "_").toUpperCase();
-        skycons.play;
-        return skycons.set(iconID, Skycons[currentIcon]);
-    }
+    
     daysGraph ();
     weatherSwitch ();
     const proxy = 'https://api.allorigins.win/raw?url=';
