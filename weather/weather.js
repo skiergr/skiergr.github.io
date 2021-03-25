@@ -114,7 +114,10 @@ window.addEventListener('load', ()=> {
     function showPosition(position) {
         lat = position.coords.latitude;
         long = position.coords.longitude;
-        .then(checkTemp => {
+    }
+        
+        
+    function checkTemp () {
             const proxy = 'https://api.allorigins.win/raw?url=';
             const APIkey = 'fd9d9c6418c23d94745b836767721ad1';
             const api = `https://api.darksky.net/forecast/${APIkey}/${lat},${long}`;
