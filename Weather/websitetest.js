@@ -117,7 +117,7 @@ window.addEventListener('load', () => {
     const api = `${proxy}https://api.darksky.net/forecast/${APIkey}/${lat},${long}`;
     fetch(api)
         .then(response => {
-            return response.text();
+            return response.json();
         })
         .then(responseData => {
             console.log(responseData);
