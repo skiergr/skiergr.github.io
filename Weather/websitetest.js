@@ -104,16 +104,7 @@ window.addEventListener('load', () => {
             location.classList.remove('fadeOut');
         });
     }
-    function getLocation() {
-        if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(showPosition);
-        }
-    }; 
-    function showPosition(position) {
-        console.log (position.coords.latitude)
-        lat = position.coords.latitude;
-        long = position.coords.longitude;
-    };
+    let long = geolocationCoordinatesInstance.longitude
     console.log(lat, long);
     daysGraph ();
     weatherSwitch ();
