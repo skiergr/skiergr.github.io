@@ -106,15 +106,26 @@ window.addEventListener('load', ()=> {
         });
     };
     weatherSwitch ();
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        }
+    }
+    function showPosition(position) {
+        lat = position.coords.latitude;
+        long = position.coords.longitude;
+    }
+    
+    
     fetch('http://api.ipstack.com/check?access_key=44d2c6d889daca228ba06a137905b446')
-        .then(response => {
+        /**.then(response => {
             return response.json();
         })
         .then(apicords => {
             long = apicords.longitude;
             lat = apicords.latitude;
 
-        })
+        })**/
         .then(checkTemp => {
             const proxy = 'https://api.allorigins.win/raw?url=';
             const APIkey = 'fd9d9c6418c23d94745b836767721ad1';
