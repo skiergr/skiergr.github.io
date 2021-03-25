@@ -1,6 +1,7 @@
 window.addEventListener('load', () => {
     const date = new Date();
     const day = date.getDate();
+    let long, lat;
     let weatherDescription = document.querySelector('.weather-description');
     let temperatureDegree = document.querySelector('.temperature-degree')
     let locationTimezone = document.querySelector('.location-timezone');
@@ -103,8 +104,8 @@ window.addEventListener('load', () => {
         });
     }
     navigator.geolocation.getCurrentPosition(function(position) {
-        let lat = position.coords.latitude;
-        let long = position.coords.longitude;
+        lat = position.coords.latitude;
+        long = position.coords.longitude;
         console.log(lat, long);
         console.log("hello1");
     });
