@@ -106,6 +106,7 @@ window.addEventListener('load', () => {
     }
     let long = geolocationCoordinatesInstance.longitude
     console.log(lat, long);
+    console.log("hello");
     daysGraph ();
     weatherSwitch ();
 });
