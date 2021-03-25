@@ -109,12 +109,17 @@ window.addEventListener('load', () => {
         console.log(lat, long);
         console.log("hello1");
     });
-    
-
-
+    function setIcons(icon, iconID){
+        const skycons = new Skycons({color: "white"});
+        const currentIcon = icon.replace(/-/g, "_").toUpperCase();
+        skycons.play;
+        return skycons.set(iconID, Skycons[currentIcon]);
+    }
+    daysGraph ();
+    weatherSwitch ();
     const proxy = 'https://api.allorigins.win/raw?url=';
     const APIkey = 'fd9d9c6418c23d94745b836767721ad1';
-    const api = `${proxy}https://api.darksky.net/forecast/${APIkey}/1,1`;
+    const api = `${proxy}https://api.darksky.net/forecast/${APIkey}/${lat},${long}`;
     fetch(api)
         .then(response => {
             return response.json();
@@ -192,10 +197,4 @@ window.addEventListener('load', () => {
                 }
             });
         });
-
-
-
-
-    daysGraph ();
-    weatherSwitch ();
 });
