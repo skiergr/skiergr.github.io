@@ -102,9 +102,12 @@ window.addEventListener('load', () => {
             location.classList.remove('fadeOut');
         });
     }
-    let long = geolocationCoordinatesInstance.longitude
-    console.log(lat, long);
-    console.log("hello1");
+    navigator.geolocation.getCurrentPosition(function(position) {
+        let lat = position.coords.latitude;
+        let long = position.coords.longitude;
+        console.log(lat, long);
+        console.log("hello");
+    });
     daysGraph ();
     weatherSwitch ();
 });
