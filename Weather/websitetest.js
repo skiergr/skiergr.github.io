@@ -107,7 +107,7 @@ window.addEventListener('load', () => {
         lat = position.coords.latitude;
         long = position.coords.longitude;
         console.log(lat, long);
-        console.log("hello1");
+        console.log("hello2");
     });
     function setIcons(icon, iconID){
         const skycons = new Skycons({color: "white"});
@@ -124,7 +124,7 @@ window.addEventListener('load', () => {
         .then(response => {
             return response.json();
         })
-        .then(responseData => { 
+        .then(responseData => {
             console.log(responseData);
             let dayOne = [responseData.daily.data[0].apparentTemperatureHigh, responseData.daily.data[0].apparentTemperatureLow, responseData.daily.data[0].summary, responseData.daily.data[0].icon];
             let dayTwo = [responseData.daily.data[1].apparentTemperatureHigh, responseData.daily.data[1].apparentTemperatureLow, responseData.daily.data[1].summary, responseData.daily.data[1].icon];
