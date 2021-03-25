@@ -106,7 +106,7 @@ window.addEventListener('load', () => {
         let lat = position.coords.latitude;
         let long = position.coords.longitude;
         console.log(lat, long);
-        console.log("hello");
+        console.log("hello1");
     });
     
 
