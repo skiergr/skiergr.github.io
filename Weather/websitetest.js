@@ -110,23 +110,6 @@ window.addEventListener('load', () => {
             location.classList.remove('fadeOut');
         });
     }
-    navigator.geolocation.getCurrentPosition(function(position) {
-        lat = position.coords.latitude;
-        long = position.coords.longitude;
-        console.log(lat, long);
-        console.log("hello2");
-    });
-    while (x != undefined && x != 1)
-    {
-        x=1;
-        console.log("hello");
-        fetchAPI ();
-    }
-    daysGraph ();
-    weatherSwitch ();
-    const proxy = 'https://api.allorigins.win/raw?url=';
-    const APIkey = 'fd9d9c6418c23d94745b836767721ad1';
-    const api = `${proxy}https://api.darksky.net/forecast/${APIkey}/${lat},${long}`;
     const fetchAPI = () => {
         fetch(api)
             .then(response => {
@@ -208,4 +191,21 @@ window.addEventListener('load', () => {
                 });
             });
     };
+    navigator.geolocation.getCurrentPosition(function(position) {
+        lat = position.coords.latitude;
+        long = position.coords.longitude;
+        console.log(lat, long);
+        console.log("hello2");
+    });
+    while (x != undefined && x != 1)
+    {
+        x=1;
+        console.log("hello");
+        fetchAPI ();
+    }
+    daysGraph ();
+    weatherSwitch ();
+    const proxy = 'https://api.allorigins.win/raw?url=';
+    const APIkey = 'fd9d9c6418c23d94745b836767721ad1';
+    const api = `${proxy}https://api.darksky.net/forecast/${APIkey}/${lat},${long}`;
 });
