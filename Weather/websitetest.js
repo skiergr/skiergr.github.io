@@ -116,7 +116,7 @@ window.addEventListener('load', () => {
         console.log(lat, long);
         console.log("hello2");
     });
-    while (!lat == undefined && x == 0)
+    while (x != undefined && x != 1)
     {
         x=1;
         console.log("hello");
