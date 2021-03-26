@@ -201,7 +201,7 @@ window.addEventListener('load', () => {
     };
     daysGraph ();
     weatherSwitch ();
-    while (lat != undefined && x != 1)
+    while (lat != undefined && x == 5)
     {
         x=1;
         console.log("hello");
