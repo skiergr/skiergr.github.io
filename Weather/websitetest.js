@@ -115,81 +115,84 @@ window.addEventListener('load', () => {
     const proxy = 'https://api.allorigins.win/raw?url=';
     const APIkey = 'fd9d9c6418c23d94745b836767721ad1';
     const api = `${proxy}https://api.darksky.net/forecast/${APIkey}/1,1`;
-    fetch(api)
-        .then(response => {
-            return response.json();
-        })
-        .then(responseData => {
-            console.log(responseData);
-            let dayOne = [responseData.daily.data[0].apparentTemperatureHigh, responseData.daily.data[0].apparentTemperatureLow, responseData.daily.data[0].summary, responseData.daily.data[0].icon];
-            let dayTwo = [responseData.daily.data[1].apparentTemperatureHigh, responseData.daily.data[1].apparentTemperatureLow, responseData.daily.data[1].summary, responseData.daily.data[1].icon];
-            let dayThree = [responseData.daily.data[2].apparentTemperatureHigh, responseData.daily.data[2].apparentTemperatureLow, responseData.daily.data[2].summary, responseData.daily.data[2].icon];
-            high1.textContent = (`High: ${Math.floor(dayOne[0])}`);
-            high2.textContent = (`High: ${Math.floor(dayTwo[0])}`);
-            high3.textContent = (`High: ${Math.floor(dayThree[0])}`);
-            low1.textContent = (`Low: ${Math.floor(dayOne[1])}`);
-            low2.textContent = (`Low: ${Math.floor(dayTwo[1])}`);
-            low3.textContent = (`Low: ${Math.floor(dayThree[1])}`);
-            description1.textContent = (dayOne[2]);
-            description2.textContent = (dayTwo[2]);
-            description3.textContent = (dayThree[2]);
-            setIcons(dayOne[3], document.querySelector('.icon1'));
-            setIcons(dayTwo[3], document.querySelector('.icon2'));
-            setIcons(dayThree[3], document.querySelector('.icon3'));
+    if (lat != undefined)
+    {
+        fetch(api)
+            .then(response => {
+                return response.json();
+            })
+            .then(responseData => {
+                console.log(responseData);
+                let dayOne = [responseData.daily.data[0].apparentTemperatureHigh, responseData.daily.data[0].apparentTemperatureLow, responseData.daily.data[0].summary, responseData.daily.data[0].icon];
+                let dayTwo = [responseData.daily.data[1].apparentTemperatureHigh, responseData.daily.data[1].apparentTemperatureLow, responseData.daily.data[1].summary, responseData.daily.data[1].icon];
+                let dayThree = [responseData.daily.data[2].apparentTemperatureHigh, responseData.daily.data[2].apparentTemperatureLow, responseData.daily.data[2].summary, responseData.daily.data[2].icon];
+                high1.textContent = (`High: ${Math.floor(dayOne[0])}`);
+                high2.textContent = (`High: ${Math.floor(dayTwo[0])}`);
+                high3.textContent = (`High: ${Math.floor(dayThree[0])}`);
+                low1.textContent = (`Low: ${Math.floor(dayOne[1])}`);
+                low2.textContent = (`Low: ${Math.floor(dayTwo[1])}`);
+                low3.textContent = (`Low: ${Math.floor(dayThree[1])}`);
+                description1.textContent = (dayOne[2]);
+                description2.textContent = (dayTwo[2]);
+                description3.textContent = (dayThree[2]);
+                setIcons(dayOne[3], document.querySelector('.icon1'));
+                setIcons(dayTwo[3], document.querySelector('.icon2'));
+                setIcons(dayThree[3], document.querySelector('.icon3'));
 
-            const {temperature, summary, icon, windSpeed, windGust, humidity} = responseData.currently;
-            temperatureDegree.textContent = Math.floor(temperature);
-            weatherDescription.textContent = summary;
-            locationTimezone.textContent = responseData.timezone.replace(/_/g, " ").replace(/\//g, ", ");
-            locationTimezone3.textContent = responseData.timezone.replace(/_/g, " ").replace(/\//g, ", ");
-            windSection.textContent = `Wind: ${Math.floor(windSpeed)} Gusts: ${Math.floor(windGust)}`;
-            humiditySection.textContent = `Humidity: ${Math.floor(humidity*100)}%`
-            
-            let celcius = (temperature - 32) * (5 / 9);
-            let celcius1h = (dayOne[0] - 32) * (5 / 9);
-            let celcius1l = (dayOne[1] - 32) * (5 / 9);
-            let celcius2h = (dayTwo[0] - 32) * (5 / 9);
-            let celcius2l = (dayTwo[1] - 32) * (5 / 9);
-            let celcius3h = (dayThree[0] - 32) * (5 / 9);
-            let celcius3l = (dayThree[1] - 32) * (5 / 9);
-            setIcons(icon, document.querySelector('.icon'));
-            temperatureType.textContent = "F";
-            weatherTemperature.addEventListener('click', () => {
-                if(temperatureType.textContent=== "F"){
-                    temperatureType.textContent = "C";
-                    temperatureDegree.textContent = Math.floor(celcius);
-                }
-                else{
-                    temperatureType.textContent = "F";
-                    temperatureDegree.textContent = Math.floor(temperature);
-                }
-            }); 
-            let x = 0;
-            weather3.addEventListener('click', () => {
-                if(x === 0){
-                    temperatureType1.textContent = "C";
-                    temperatureType2.textContent = "C";
-                    temperatureType3.textContent = "C";
-                    high1.textContent = `High: ${Math.floor(celcius1h)}`;
-                    high2.textContent = `High: ${Math.floor(celcius2h)}`;
-                    high3.textContent = `High: ${Math.floor(celcius3h)}`;
-                    low1.textContent = `High: ${Math.floor(celcius1l)}`;
-                    low2.textContent = `High: ${Math.floor(celcius2l)}`;
-                    low3.textContent = `High: ${Math.floor(celcius2l)}`;
-                    x++;
-                }
-                else{
-                    temperatureType1.textContent = "F";
-                    temperatureType2.textContent = "F";
-                    temperatureType3.textContent = "F";
-                    high1.textContent = `High: ${Math.floor(dayOne[0])}`;
-                    high2.textContent = `High: ${Math.floor(dayTwo[0])}`;
-                    high3.textContent = `High: ${Math.floor(dayThree[0])}`;
-                    low1.textContent = `High: ${Math.floor(dayOne[1])}`;
-                    low2.textContent = `High: ${Math.floor(dayTwo[1])}`;
-                    low3.textContent = `High: ${Math.floor(dayThree[1])}`;
-                    x--;
-                }
+                const {temperature, summary, icon, windSpeed, windGust, humidity} = responseData.currently;
+                temperatureDegree.textContent = Math.floor(temperature);
+                weatherDescription.textContent = summary;
+                locationTimezone.textContent = responseData.timezone.replace(/_/g, " ").replace(/\//g, ", ");
+                locationTimezone3.textContent = responseData.timezone.replace(/_/g, " ").replace(/\//g, ", ");
+                windSection.textContent = `Wind: ${Math.floor(windSpeed)} Gusts: ${Math.floor(windGust)}`;
+                humiditySection.textContent = `Humidity: ${Math.floor(humidity*100)}%`
+                
+                let celcius = (temperature - 32) * (5 / 9);
+                let celcius1h = (dayOne[0] - 32) * (5 / 9);
+                let celcius1l = (dayOne[1] - 32) * (5 / 9);
+                let celcius2h = (dayTwo[0] - 32) * (5 / 9);
+                let celcius2l = (dayTwo[1] - 32) * (5 / 9);
+                let celcius3h = (dayThree[0] - 32) * (5 / 9);
+                let celcius3l = (dayThree[1] - 32) * (5 / 9);
+                setIcons(icon, document.querySelector('.icon'));
+                temperatureType.textContent = "F";
+                weatherTemperature.addEventListener('click', () => {
+                    if(temperatureType.textContent=== "F"){
+                        temperatureType.textContent = "C";
+                        temperatureDegree.textContent = Math.floor(celcius);
+                    }
+                    else{
+                        temperatureType.textContent = "F";
+                        temperatureDegree.textContent = Math.floor(temperature);
+                    }
+                }); 
+                let x = 0;
+                weather3.addEventListener('click', () => {
+                    if(x === 0){
+                        temperatureType1.textContent = "C";
+                        temperatureType2.textContent = "C";
+                        temperatureType3.textContent = "C";
+                        high1.textContent = `High: ${Math.floor(celcius1h)}`;
+                        high2.textContent = `High: ${Math.floor(celcius2h)}`;
+                        high3.textContent = `High: ${Math.floor(celcius3h)}`;
+                        low1.textContent = `High: ${Math.floor(celcius1l)}`;
+                        low2.textContent = `High: ${Math.floor(celcius2l)}`;
+                        low3.textContent = `High: ${Math.floor(celcius2l)}`;
+                        x++;
+                    }
+                    else{
+                        temperatureType1.textContent = "F";
+                        temperatureType2.textContent = "F";
+                        temperatureType3.textContent = "F";
+                        high1.textContent = `High: ${Math.floor(dayOne[0])}`;
+                        high2.textContent = `High: ${Math.floor(dayTwo[0])}`;
+                        high3.textContent = `High: ${Math.floor(dayThree[0])}`;
+                        low1.textContent = `High: ${Math.floor(dayOne[1])}`;
+                        low2.textContent = `High: ${Math.floor(dayTwo[1])}`;
+                        low3.textContent = `High: ${Math.floor(dayThree[1])}`;
+                        x--;
+                    }
+                });
             });
-        });
+    }
 });
