@@ -2,6 +2,7 @@ window.addEventListener('load', () => {
     const date = new Date();
     const day = date.getDate();
     let long, lat;
+    let x = 0;
     let weatherDescription = document.querySelector('.weather-description');
     let temperatureDegree = document.querySelector('.temperature-degree')
     let locationTimezone = document.querySelector('.location-timezone');
@@ -114,9 +115,12 @@ window.addEventListener('load', () => {
         long = position.coords.longitude;
         console.log(lat, long);
         console.log("hello2");
-        fetchAPI ();
     });
-    
+    while (!lat == undefined && x == 0)
+    {
+        x=1;
+        fetchAPI ();
+    }
     daysGraph ();
     weatherSwitch ();
     const proxy = 'https://api.allorigins.win/raw?url=';
