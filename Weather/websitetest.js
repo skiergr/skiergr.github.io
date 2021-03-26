@@ -108,7 +108,7 @@ window.addEventListener('load', () => {
         long = position.coords.longitude;
         console.log(lat, long);
         console.log("hello2");
-        fetchAPI ();
+        fetchAPI ();s
     });
     
     daysGraph ();
@@ -119,6 +119,8 @@ window.addEventListener('load', () => {
     const fetchAPI = () => {
         fetch(api)
             .then(response => {
+                console.log(lat, long);
+                console.log('inside fetch');
                 return response.json();
             })
             .then(responseData => {
