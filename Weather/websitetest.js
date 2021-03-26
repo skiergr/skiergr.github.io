@@ -119,6 +119,7 @@ window.addEventListener('load', () => {
     while (!lat == undefined && x == 0)
     {
         x=1;
+        console.log("hello");
         fetchAPI ();
     }
     daysGraph ();
