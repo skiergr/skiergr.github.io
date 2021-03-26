@@ -34,6 +34,12 @@ window.addEventListener('load', () => {
     let day2 = document.querySelector('.dayTwo');
     let day3 = document.querySelector('.dayThree');
     let weather3 = document.querySelector('.weather3');
+    function setIcons(icon, iconID){
+        const skycons = new Skycons({color: "white"});
+        const currentIcon = icon.replace(/-/g, "_").toUpperCase();
+        skycons.play;
+        return skycons.set(iconID, Skycons[currentIcon]);
+    }
     const daysGraph = () => {
         if(day === 1)
         {
@@ -108,7 +114,7 @@ window.addEventListener('load', () => {
         long = position.coords.longitude;
         console.log(lat, long);
         console.log("hello2");
-        fetchAPI ();s
+        fetchAPI ();
     });
     
     daysGraph ();
