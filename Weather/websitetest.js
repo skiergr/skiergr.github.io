@@ -121,8 +121,6 @@ window.addEventListener('load', () => {
     const fetchAPI = () => {
         fetch(api)
             .then(response => {
-                console.log(lat, long);
-                console.log('inside fetch');
                 return response.json();
             })
             .then(responseData => {
@@ -201,7 +199,7 @@ window.addEventListener('load', () => {
     };
     daysGraph ();
     weatherSwitch ();
-    while (lat != undefined && x == 5)
+    while (lat != undefined)
     {
         x=1;
         console.log("hello");
