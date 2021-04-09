@@ -45,7 +45,7 @@ const game = () => {
                 const computerChoice = computerOptions[computerNumber];
                 setTimeout(() => {
                     compareHands(this.textContent, computerChoice);
-                    console.log("hello");
+                    console.log("Hello");
                     console.log(this.textContent, computerChoice);
                     playerHand.src = `../Rock Paper and Scissors/Assets/Paper.png`;
                     computerHand.src = `../Assets/${computerChoice}.png`;
