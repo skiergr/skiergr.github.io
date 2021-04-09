@@ -1,0 +1,165 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+section {
+  height: 100vh;
+  background-color: cornflowerblue;
+  font-family: sans-serif;
+}
+.back-button,
+.home-button {
+  transition: opacity 0.5s ease;
+}
+.back-button button,
+.home-button button {
+  width: 75px;
+  height: 30px;
+  background: none;
+  border: none;
+  font-size: 12.5px;
+  color: white;
+  background: turquoise;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+}
+.score {
+  color: white;
+  height: 20vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.score h2 {
+  font-size: 30px;
+}
+.score p {
+  font-size: 25px;
+  text-align: center;
+  padding: 10px;
+}
+.intro {
+  color: white;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  transition: opacity 0.5s ease;
+}
+.intro h1 {
+  font-size: 50px;
+}
+.intro button {
+  width: 150px;
+  height: 50px;
+  background: none;
+  border: none;
+  font-size: 25px;
+  color: white;
+  background: turquoise;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.match {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.5s ease;
+}
+.winner {
+  color: white;
+  text-align: center;
+  font-size: 50px;
+}
+.hands,
+.topRow {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.bottomRow {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.bottomRow button,
+.topRow button {
+  width: 75px;
+  height: 30px;
+  background: none;
+  border: none;
+  font-size: 12.5px;
+  color: white;
+  background: turquoise;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.bottomRow button {
+  margin-top: 30px;
+}
+.hands img {
+  height: 130px;
+  width: 240px;
+  margin: 50px;
+}
+.computer-hand {
+  transform: rotateY(180deg);
+}
+div.fadeOut {
+  opacity: 0;
+  pointer-events: none;
+}
+div.fadeIn {
+  opacity: 1;
+  pointer-events: all;
+}
+@keyframes shakeComputer {
+  0% {
+    transform: rotateY(180deg) translateY(0px);
+  }
+  16% {
+    transform: rotateY(180deg) translateY(-50px);
+  }
+  33% {
+    transform: rotateY(180deg) translateY(0px);
+  }
+  49% {
+    transform: rotateY(180deg) translateY(-50px);
+  }
+  66% {
+    transform: rotateY(180deg) translateY(0px);
+  }
+  83% {
+    transform: rotateY(180deg) translateY(-50px);
+  }
+  100% {
+    transform: rotateY(180deg) translateY(0px);
+  }
+}
+@keyframes shakePlayer {
+  0% {
+    transform: translateY(0px);
+  }
+  16% {
+    transform: translateY(-50px);
+  }
+  33% {
+    transform: translateY(0px);
+  }
+  49% {
+    transform: translateY(-50px);
+  }
+  66% {
+    transform: translateY(0px);
+  }
+  83% {
+    transform: translateY(-50px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
