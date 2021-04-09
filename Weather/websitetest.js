@@ -114,6 +114,7 @@ window.addEventListener('load', () => {
         lat = position.coords.latitude;
         long = position.coords.longitude;
         console.log(lat, long);
+        fetchAPI ();
     });
     const proxy = 'https://api.allorigins.win/raw?url=';
     const APIkey = 'fd9d9c6418c23d94745b836767721ad1';
@@ -199,10 +200,4 @@ window.addEventListener('load', () => {
     };
     daysGraph ();
     weatherSwitch ();
-    while (lat != undefined)
-    {
-        x=1;
-        console.log("hello");
-        fetchAPI ();
-    }
 });
