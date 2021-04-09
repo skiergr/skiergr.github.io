@@ -2,6 +2,8 @@ window.addEventListener('load', () => {
     const date = new Date();
     const day = date.getDate();
     let long, lat;
+    lat = 1;
+    long = 1;
     let x = 0;
     let weatherDescription = document.querySelector('.weather-description');
     let temperatureDegree = document.querySelector('.temperature-degree')
