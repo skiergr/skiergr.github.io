@@ -114,10 +114,12 @@ window.addEventListener('load', () => {
         lat = position.coords.latitude;
         long = position.coords.longitude;
         console.log(lat, long);
-        while(lat != undefined)
+        let x = 0;
+        while(lat != undefined && x == 0)
         {
             console.log("API has been fetched");
             fetchAPI ();
+            x = 1;
         }
 
 
