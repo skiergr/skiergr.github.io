@@ -45,8 +45,8 @@ const game = () => {
                 const computerChoice = computerOptions[computerNumber];
                 setTimeout(() => {
                     compareHands(this.textContent, computerChoice);
-                    playerHand.src = `./assets/${this.textContent}.png`;
-                    computerHand.src = `./assets/${computerChoice}.png`;
+                    playerHand.src = `./Assets/${this.textContent}.png`;
+                    computerHand.src = `./Assets/${computerChoice}.png`;
                 }, 2000)
                 playerHand.style.animation = "shakePlayer 2s ease";
                 computerHand.style.animation = "shakeComputer 2s ease";
