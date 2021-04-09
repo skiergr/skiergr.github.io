@@ -45,6 +45,7 @@ const game = () => {
                 const computerChoice = computerOptions[computerNumber];
                 setTimeout(() => {
                     compareHands(this.textContent, computerChoice);
+                    console.log("hello");
                     console.log(this.textContent, computerChoice);
                     playerHand.src = `./Assets/${this.textContent}.png`;
                     computerHand.src = `./Assets/${computerChoice}.png`;
