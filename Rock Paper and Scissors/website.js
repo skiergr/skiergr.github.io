@@ -38,7 +38,7 @@ const game = () => {
                 this.style.animation = '';
             });
         });
-        const computerOptions = ['Rock', 'Paper', 'Scissors', 'Lizard', 'Spock'];
+        const computerOptions = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
         options.forEach(options => {
             options.addEventListener('click', function() {
                 const computerNumber = Math.floor(Math.random() * 5);
@@ -47,7 +47,7 @@ const game = () => {
                     compareHands(this.textContent, computerChoice);
                     console.log("Hello");
                     console.log(this.textContent, computerChoice);
-                    playerHand.src = "./Assets/paper.png";
+                    playerHand.src = `./Assets/${this.textContent}.png`;
                     computerHand.src = `../Assets/${computerChoice}.png`;
                 }, 2000)
                 playerHand.style.animation = "shakePlayer 2s ease";
