@@ -38,7 +38,7 @@ const game = () => {
                 this.style.animation = '';
             });
         });
-        const computerOptions = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
+        const computerOptions = ['Rock', 'Paper', 'Scissors', 'Lizard', 'Spock'];
         options.forEach(options => {
             options.addEventListener('click', function() {
                 const computerNumber = Math.floor(Math.random() * 5);
@@ -48,7 +48,7 @@ const game = () => {
                     console.log("Hello");
                     console.log(this.textContent, computerChoice);
                     playerHand.src = `./Assets/${this.textContent.toLowerCase()}.png`;
-                    computerHand.src = `./Assets/${computerChoice}.png`;
+                    computerHand.src = `./Assets/${computerChoice.toLowerCase()}.png`;
                 }, 2000)
                 playerHand.style.animation = "shakePlayer 2s ease";
                 computerHand.style.animation = "shakeComputer 2s ease";
