@@ -5,7 +5,13 @@ var planes = [
     "Background/254431.jpg",
     "Background/254475.jpg",
     "Background/2636727.jpg",
-    "Background/pexels-pixabay-76964.jpg"
+    "Background/pexels-pixabay-76964.jpg",
+    "Background/1575.jpg",
+    "Background/1577.jpg",
+    "Background/1585.jpg",
+    "Background/1617.jpg",
+    "Background/1622.jpg"
+
 ]
 var btn = document.querySelector("button");
 var img = document.querySelector("img");

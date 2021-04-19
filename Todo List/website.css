@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-image: linear-gradient(
+    120deg,
+    rgba(15, 112, 112, 0.562),
+    rgb(20, 98, 170)
+  );
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  min-height: 100vh;
+}
+header {
+  font-size: 1.5rem;
+}
+header,
+form,
+.complete-container {
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+form input,
+form button {
+  padding: 0.5rem;
+  font-size: 2rem;
+  border: none;
+  background: white;
+}
+form button {
+  color: rgb(20, 98, 170);
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+form button:hover {
+  color: white;
+  background: rgb(20, 98, 170);
+}
+.todo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.todo-list {
+  min-width: 30%;
+  list-style: none;
+}
+.todo {
+  margin: 0.5rem;
+  background: white;
+  color: black;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 1s ease;
+}
+.todo li {
+  flex: 1;
+}
+.trash-btn,
+.complete-btn {
+  background: rgb(13, 86, 155);
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+.complete-btn {
+  background: rgb(6, 172, 6);
+}
+.trash-btn {
+  background: red;
+}
+.todo-item {
+  padding: 0rem 0.5rem;
+}
+.done {
+  background: rgb(13, 86, 155);
+  color: white;
+  border: none;
+  border-radius: 10%;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: all 1s ease;
+}
+.fa-trash,
+.fa-check {
+  pointer-events: none;
+}
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+  background: rgb(201, 253, 217);
+}
+.fall {
+  transform: translateY(8rem) rotateZ(10deg);
+  opacity: 0;
+}
