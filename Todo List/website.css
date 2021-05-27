@@ -25,7 +25,8 @@ form,
   align-items: center;
 }
 form input,
-form button {
+form button,
+.select {
   padding: 0.5rem;
   font-size: 2rem;
   border: none;

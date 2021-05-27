@@ -15,6 +15,7 @@ todoButton.addEventListener('keypress', function (event) {
 todoList.addEventListener('click', deleteCheck);
 done.addEventListener('click', finished);
 //Functions
+//Adds an item ont the checklist with buttons
 function addTodo(event) {
   x++;
   event.preventDefault();
@@ -35,6 +36,7 @@ function addTodo(event) {
   todoList.appendChild(todoDiv);
   todoInput.value = '';
 }
+//Checking wether the trash button or complete button is pressed
 function deleteCheck(event) {
   const item = event.target;
   if (item.classList[0] === 'trash-btn') {
@@ -49,6 +51,7 @@ function deleteCheck(event) {
     item.parentElement.classList.toggle('completed');
   }
 }
+//When the done button is pressed
 function finished() {
   const container = document.querySelectorAll('.todo');
   let y = x;
