@@ -25,8 +25,7 @@ form,
   align-items: center;
 }
 form input,
-form button,
-.select {
+form button {
   padding: 0.5rem;
   font-size: 2rem;
   border: none;
@@ -104,4 +103,36 @@ form button:hover {
 .fall {
   transform: translateY(12rem) rotateZ(10deg);
   opacity: 0;
+}
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  border: none;
+}
+.select {
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+select {
+  color: rgb(13, 86, 155);
+  width: 10rem;
+  cursor: pointer;
+  padding: 1rem;
+}
+.select::after {
+  content: '\25BC';
+  position: absolute;
+  background: rgb(13, 86, 155);
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  pointer-events: none;
+  transition: all 0.5s ease;
+}
+.select:hover::after {
+  background: white;
+  color: rgb(13, 86, 155);
 }
